@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "9f1c4336-a2d1-4b50-8258-e868bf828cf6",
+		"name": "GIS_CLOUD_第三方集成对接接口",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "应急局接口整理",
+			"item": [
+				{
+					"name": "按条件租户概况",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"type": "text",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/report/QueryTotalOutlook",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"report",
+								"QueryTotalOutlook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "近7天查询任务执行情况",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"type": "text",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"beginTime\": \"2022-08-09\",\r\n   \"endTime\": \"2022-08-16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/backend/executionmission/QueryMissionExeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"backend",
+								"executionmission",
+								"QueryMissionExeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "日常任务巡飞统计详情",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"type": "text",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"missionType\": \"1544569281352699904\",\r\n   \"isFlightException\": \"0\",\r\n   \"beginTime\": \"2022-08-16\",\r\n   \"endTime\": \"2022-08-16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/backend/executionmission/QueryMissionExeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"backend",
+								"executionmission",
+								"QueryMissionExeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询任务类型列表按租户ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"type": "text",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/backend/sysconfig/MissionType/querySysDataTypeInfoByCustId/1544592785276014592",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"backend",
+								"sysconfig",
+								"MissionType",
+								"querySysDataTypeInfoByCustId",
+								"1544592785276014592"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "按机场统计概况信息",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"type": "text",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/report/queryTotalOutlookByPlatdormId/1545002603732144128",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"report",
+								"queryTotalOutlookByPlatdormId",
+								"1545002603732144128"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "巡飞架次统计按天分组",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"type": "text",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"beginTime\": \"2022-08-10\",\r\n   \"endTime\": \"2022-08-16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/report/QueryTotalOpeFrequensAndTimesByday",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"report",
+								"QueryTotalOpeFrequensAndTimesByday"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "近7天查询任务执行情况某个机场",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"type": "text",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"platformId\": \"1545002603732144128\",\r\n   \"beginTime\": \"2022-08-16\",\r\n   \"endTime\": \"2022-08-16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/backend/executionmission/QueryMissionExeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"backend",
+								"executionmission",
+								"QueryMissionExeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询指定日期巡飞统计按机场分组",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"type": "text",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n   \"beginTime\": \"2022-08-18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/report/QueryTotalOpeFrequensAndTimesByPlatForm",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"report",
+								"QueryTotalOpeFrequensAndTimesByPlatForm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询正在巡飞的任务列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"type": "text",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/backend/executionmission/QueryIsExecutingMissions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"backend",
+								"executionmission",
+								"QueryIsExecutingMissions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
